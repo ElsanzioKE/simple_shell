@@ -1,13 +1,3 @@
-#include "main.h"
-void print_tokens(char **tokens)
-{
-	int i;
-	for (i = 0; tokens[i] != NULL; i++)
-	{
-        	printf("%s\n", tokens[i]);
-	}
-}
-
 
 #include "main.h"
 /**
@@ -19,6 +9,9 @@ int main(void)
 
 {
 	char *input, **tokens, *delim;
+	int status;
+	
+	status = 0;
 
 	delim = " \t\n";
 
@@ -28,8 +21,12 @@ int main(void)
 			display_prompt();
 		input = get_input();
 		tokens = parser(input, delim);
-		print_tokens(tokens);
-		break;
+		status = execute(tokens);
+		free_tokens(tokens);
+		if (status != 0)
+		{
+			continue;
+		}
 
 	}
 	return (0);
