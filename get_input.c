@@ -4,19 +4,19 @@
  * @str - string to test
  * Return: true
  */
-
 bool is_empty(const char *str)
 {
-	size_t i;
-	for (i = 0; i < strlen(str); i++)
+	while (*str)
 	{
-		if (str[i] != ' ')
+		if (*str != ' ' && *str != '\t' && *str != '\n' && *str != '\r' && *str != '\f' && *str != '\v')
 		{
 			return (false);
 		}
+		str++;
 	}
 	return (true);
 }
+
 #include "main.h"
 /**
  * get_input - gets input from the commandline
