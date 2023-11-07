@@ -13,9 +13,11 @@ void display_prompt(void);
 char *get_input();
 bool is_empty(const char *str);
 char **parser(char *input, const char *delim);
+int is_whitespace(char ch);
 void free_tokens(char **tokens);
 int execute(char **tokens);
 
 int _strlen(char *s);
+char *_strdup(const char *str);
 
 #endif

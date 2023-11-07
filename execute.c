@@ -14,6 +14,7 @@ int execute(char **tokens)
 
 	if (tokens ==  NULL || tokens[0] == NULL)
 	{
+		perror("command error");
 		return (-1);
 	}
 	child_pid = fork();
@@ -26,7 +27,7 @@ int execute(char **tokens)
 	{
 		if (execve(tokens[0], tokens, NULL) == -1)
 		{
-			perror("");
+			perror("execve");
 			exit(EXIT_FAILURE);
 		}
 		else
