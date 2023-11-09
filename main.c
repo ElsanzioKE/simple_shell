@@ -13,7 +13,7 @@ int main(void)
 	
 	status = 0;
 
-	delim = " \t\n";
+	delim = " \n\t";
 
 	while(1)
 	{

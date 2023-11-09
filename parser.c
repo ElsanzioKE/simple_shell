@@ -46,7 +46,7 @@ char **parser(char *input, const char *delim)
 
 #include "main.h"
 /**
- * firee_tokens - frees tokens that are no longer needed
+ * free_tokens - frees tokens that are no longer needed
  * @tokens: the actual tokens
  * Return: NULL
  */

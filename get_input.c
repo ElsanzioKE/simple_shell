@@ -45,11 +45,6 @@ char *get_input()
 		exit(EXIT_FAILURE);
 
 	}
-	if (is_empty(buffer))
-	{
-		free(buffer);
-		return (NULL);
-	}
 	if (buffer[input - 1] == '\n')
 		buffer[input - 1] = '\0';
 	return (buffer);
