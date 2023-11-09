@@ -28,7 +28,7 @@ int main(void)
 			{
 				write(STDOUT_FILENO, "\n", 1);
 			}
-			break;
+			continue;
 	
 		}
 		tokens = parser(input, delim);
