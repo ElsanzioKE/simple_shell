@@ -9,6 +9,7 @@ int execute(char **tokens)
 {
 	pid_t child_pid;
 	int status;
+	char *command, *full_path;
 
 	status = 0;
 
@@ -16,6 +17,14 @@ int execute(char **tokens)
 	{
 		perror("command error");
 		return (-1);
+	}
+
+	command = tokens[0];
+	full_path = find_path(command);
+	if (full_path == NULL)
+	{
+		perror("command not found");
+		return(-1);
 	}
 	child_pid = fork();
 	if (child_pid == -1)
@@ -25,7 +34,7 @@ int execute(char **tokens)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(tokens[0], tokens, NULL) == -1)
+		if (execve(full_path, tokens, environ) == -1)
 		{
 			perror("execve");
 			exit(EXIT_FAILURE);

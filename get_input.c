@@ -23,7 +23,6 @@ bool is_empty(const char *str)
  * using getline function
  * Return: buffer
  */
-
 char *get_input()
 {
 	ssize_t input;
@@ -37,8 +36,14 @@ char *get_input()
 
 	if (input == -1)
 	{
+		if (errno == EOF)
+		{
+			free(buffer);
+			return (NULL);
+		}
 		free(buffer);
 		exit(EXIT_FAILURE);
+
 	}
 	if (is_empty(buffer))
 	{
