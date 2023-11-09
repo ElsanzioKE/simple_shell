@@ -8,6 +8,6 @@ void display_prompt(void)
 {
 	char *prompt;
 
-	prompt = "\n;) ";
+	prompt = "\n$ ";
 	write(STDOUT_FILENO, prompt, _strlen(prompt));
 }	
