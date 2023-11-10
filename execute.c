@@ -15,8 +15,7 @@ int execute(char **tokens)
 
 	if (tokens ==  NULL || tokens[0] == NULL)
 	{
-		perror("command error");
-		return (-1);
+		return (0);
 	}
 
 	command = tokens[0];
@@ -24,7 +23,7 @@ int execute(char **tokens)
 	if (full_path == NULL)
 	{
 		perror("command not found");
-		return(-1);
+		return(1);
 	}
 	child_pid = fork();
 	if (child_pid == -1)
