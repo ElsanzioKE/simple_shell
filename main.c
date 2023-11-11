@@ -10,7 +10,7 @@ int main(void)
 {
 	char *input, **tokens, *delim;
 	int status;
-	
+
 	status = 0;
 
 	delim = " \n\t";
