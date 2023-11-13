@@ -32,8 +32,14 @@ char *str_concat(char *s1, char *s2);
 int _strcmp(char *s1, char *s2);
 char *_strcat(char *dest, const char *src);
 char *_strcpy(char *dest, const char *src);
-
-typedef struct {
+/**
+ * structi builtin_command - structure for builtin commands
+ * @name: name of the builtin command
+ *
+ * Description: structure for builtin commands
+ */
+typedef struct
+{
 	char *name;
 	int (*execute_builtins)(char **argv);
 } builtin_command;

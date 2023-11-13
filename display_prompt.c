@@ -10,4 +10,4 @@ void display_prompt(void)
 
 	prompt = "\n$ ";
 	write(STDOUT_FILENO, prompt, _strlen(prompt));
-}	
+}

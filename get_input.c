@@ -1,21 +1,3 @@
-#include "main.h"
-/**
- * is_empty - checks for spaces without command
- * @str - string to test
- * Return: true
- */
-bool is_empty(const char *str)
-{
-	while (*str)
-	{
-		if (*str != ' ' && *str != '\t' && *str != '\n' && *str != '\r' && *str != '\f' && *str != '\v')
-		{
-			return (false);
-		}
-		str++;
-	}
-	return (true);
-}
 
 #include "main.h"
 /**

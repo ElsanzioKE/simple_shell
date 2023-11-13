@@ -20,15 +20,14 @@ int execute(char **tokens)
 
 	command = tokens[0];
 	full_path = find_path(command);
+	printf("%s: \n", full_path);
 	if (full_path == NULL)
-	{
-	print_command_not_found_error(command, 127);
-	}
+		print_command_not_found_error(command, 127);
 	child_pid = fork();
 	if (child_pid == -1)
 	{
 		perror("fork");
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 	if (child_pid == 0)
 	{
@@ -49,10 +48,18 @@ int execute(char **tokens)
 
 }
 #include "main.h"
+/**
+ * print_command_not_found_error - prints to
+ * stderr the error statement when command is not found
+ * @command: command to be executed
+ * @exit_status: exit status after execution
+ * Return: nothing
+ */
 
 void print_command_not_found_error(char *command, int exit_status)
 {
 	char *error_message;
+
 	error_message = "not found\n";
 	write(STDERR_FILENO, "./hsh: ", 7);
 	write(STDERR_FILENO, "1: ", 3);

@@ -10,14 +10,14 @@ int main(void)
 {
 	char *input, **tokens, *delim;
 	int status;
-	
+
 	status = 0;
 
 	delim = " \n\t";
 
-	while(1)
+	while (1)
 	{
-		if(isatty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO))
 			display_prompt();
 		input = get_input();
 
@@ -29,7 +29,7 @@ int main(void)
 				write(STDOUT_FILENO, "\n", 1);
 			}
 			continue;
-	
+
 		}
 		tokens = parser(input, delim);
 
@@ -40,14 +40,12 @@ int main(void)
 		{
 			continue;
 		}
-		if(isatty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO))
 		{
 			continue;
 		}
 		else
-		{
 			break;
-		}
 	}
 	return (0);
 }

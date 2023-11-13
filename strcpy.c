@@ -9,6 +9,7 @@
 char *_strcpy(char *dest, const char *src)
 {
 	char *result = dest;
+
 	while (*src != '\0')
 	{
 		*dest = *src;

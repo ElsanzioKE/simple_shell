@@ -15,15 +15,15 @@ char **parser(char *input, const char *delim)
 
 	tokens = NULL;
 	token_count = 0;
-	
-	if(delim == NULL)
+
+	if (delim == NULL)
 
 	delim = " \n\t";
-	
+
 	token  = strtok(input, delim);
 	while (token != NULL)
 	{
-		tokens = realloc(tokens, (token_count + 1) * sizeof(char*));
+		tokens = realloc(tokens, (token_count + 1) * sizeof(char *));
 		if (tokens == NULL)
 		{
 			perror("realloc failed");
@@ -34,7 +34,7 @@ char **parser(char *input, const char *delim)
 
 		token = strtok(NULL, delim);
 	}
-	tokens = realloc(tokens, (token_count + 1) * sizeof(char*));
+	tokens = realloc(tokens, (token_count + 1) * sizeof(char *));
 	if (tokens == NULL)
 	{
 		perror("realloc failed");
@@ -54,6 +54,7 @@ char **parser(char *input, const char *delim)
 void free_tokens(char **tokens)
 {
 	int i;
+
 	if (tokens != NULL)
 	{
 

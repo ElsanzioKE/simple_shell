@@ -9,6 +9,7 @@ char *_strdup(const char *str)
 {
 	size_t len, i;
 	char *duplicate;
+
 	if (str == NULL)
 	{
 		return (NULL);

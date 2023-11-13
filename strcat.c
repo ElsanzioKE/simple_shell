@@ -6,7 +6,7 @@
  *
  * Return: Pointer to the concatenated string (dest).
  */
-char *_strcat(char *dest, const char *src) 
+char *_strcat(char *dest, const char *src)
 {
 	char *result = dest;
 
