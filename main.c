@@ -10,7 +10,7 @@ int main(void)
 {
 	char *input, **tokens, *delim;
 	int status;
-
+	
 	status = 0;
 
 	delim = " \n\t";
@@ -32,6 +32,7 @@ int main(void)
 	
 		}
 		tokens = parser(input, delim);
+
 		status = execute(tokens);
 		free_tokens(tokens);
 		free(input);

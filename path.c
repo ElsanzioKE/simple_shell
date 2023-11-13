@@ -44,11 +44,6 @@ char *find_path(char *command)
 			return (command);
 		return (NULL);
 	}
-	else 
-	{
-		perror("no command input");
-		return (NULL);
-	}
 	return (NULL);
 
 }

@@ -22,8 +22,7 @@ int execute(char **tokens)
 	full_path = find_path(command);
 	if (full_path == NULL)
 	{
-		perror("command not found");
-		return(1);
+	print_command_not_found_error(command, 127);
 	}
 	child_pid = fork();
 	if (child_pid == -1)
@@ -49,3 +48,17 @@ int execute(char **tokens)
 
 
 }
+#include "main.h"
+
+void print_command_not_found_error(char *command, int exit_status)
+{
+	char *error_message;
+	error_message = "not found\n";
+	write(STDERR_FILENO, "./hsh: ", 7);
+	write(STDERR_FILENO, "1: ", 3);
+	write(STDERR_FILENO, command, _strlen(command));
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, error_message, _strlen(error_message));
+	exit(exit_status);
+}
+
