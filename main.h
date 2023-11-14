@@ -44,6 +44,7 @@ typedef struct
 	int (*execute_builtins)(char **argv);
 } builtin_command;
 
-int my_exit(char **args);
+int my_exit(char **argv);
+int my_env(char **args);
 
 #endif

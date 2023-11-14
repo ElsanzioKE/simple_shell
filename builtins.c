@@ -13,12 +13,15 @@ int find_builtin(char **argv)
 	int i, builtin_result = -1;
 	builtin_command builtins[] = {
 		{"exit", my_exit},
+		{"env", my_env},
 		{NULL, NULL}
 	};
+	if (argv == NULL || argv[0] == NULL)
+		return (-1);
 
 	for (i = 0; builtins[i].name != NULL; i++)
 	{
-		if (_strcmp(argv[0], builtins[i].name) == 0)
+		if (strcmp(argv[0], builtins[i].name) == 0)
 		{
 			builtin_result = builtins[i].execute_builtins(argv);
 			break;

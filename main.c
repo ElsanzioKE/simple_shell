@@ -9,7 +9,7 @@ int main(void)
 
 {
 	char *input, **tokens, *delim;
-	int status;
+	int status, builtin;
 
 	status = 0;
 
@@ -32,17 +32,15 @@ int main(void)
 
 		}
 		tokens = parser(input, delim);
-		status = execute(tokens);
+		builtin = find_builtin(tokens);
+		if (builtins == -1)
+			status = execute(tokens);
 		free_tokens(tokens);
 		free(input);
 		if (status != 0)
-		{
 			continue;
-		}
 		if (isatty(STDIN_FILENO))
-		{
 			continue;
-		}
 		else
 			break;
 	}
