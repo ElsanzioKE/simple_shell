@@ -35,7 +35,7 @@ A simple shell implementation in C that provides basic command-line functionalit
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/simple-shell.git
+    git clone https://github.com/ElsanzioKE/simple_shell.git
     ```
 
 2. Compile the code:
