@@ -32,7 +32,6 @@ int main(void)
 
 		}
 		tokens = parser(input, delim);
-
 		status = execute(tokens);
 		free_tokens(tokens);
 		free(input);

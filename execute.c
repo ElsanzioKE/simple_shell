@@ -20,14 +20,13 @@ int execute(char **tokens)
 
 	command = tokens[0];
 	full_path = find_path(command);
-	printf("%s: \n", full_path);
 	if (full_path == NULL)
 		print_command_not_found_error(command, 127);
 	child_pid = fork();
 	if (child_pid == -1)
 	{
 		perror("fork");
-		exit(EXIT_SUCCESS);
+		exit(EXIT_FAILURE);
 	}
 	if (child_pid == 0)
 	{
