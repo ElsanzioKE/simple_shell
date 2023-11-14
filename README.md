@@ -41,7 +41,7 @@ A simple shell implementation in C that provides basic command-line functionalit
 2. Compile the code:
 
     ```bash
-    cd simple_shell
+    cd simple-shell
     gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
     ```
 
@@ -50,7 +50,7 @@ A simple shell implementation in C that provides basic command-line functionalit
 1. Run the shell:
 
     ```bash
-    ./hsh
+    ./simple_shell
     ```
 
 2. Enter commands at the prompt:
