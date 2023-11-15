@@ -26,14 +26,16 @@ int execute(char **tokens)
 	if (child_pid == -1)
 	{
 		perror("fork");
-		exit(EXIT_FAILURE);
+		free(full_path);
+		return(errno);
 	}
 	if (child_pid == 0)
 	{
 		if (execve(full_path, tokens, environ) == -1)
 		{
 			print_command_not_found_error(command, 127);
-			exit(EXIT_FAILURE);
+			free(full_path);
+			return(errno);
 		}
 		else
 		{
