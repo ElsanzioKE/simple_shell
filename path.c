@@ -17,7 +17,7 @@ char *find_path(char *command)
 	if (command && path)
 	{
 		path_copy = _strdup(path);
-		command_len = strlen(command);
+		command_len = _strlen(command);
 		path_token = strtok(path_copy, ":");
 
 		while (path_token != NULL)
