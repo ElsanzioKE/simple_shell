@@ -33,7 +33,7 @@ int main(void)
 		}
 		tokens = parser(input, delim);
 		builtin = find_builtin(tokens);
-		if (builtins == -1)
+		if (builtin == -1)
 			status = execute(tokens);
 		free_tokens(tokens);
 		free(input);
