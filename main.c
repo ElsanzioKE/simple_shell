@@ -41,6 +41,8 @@ int main(void)
 			continue;
 		if (isatty(STDIN_FILENO))
 			continue;
+		else
+			break;
 	}
 	return (0);
 }
