@@ -25,7 +25,7 @@ int execute(char **tokens)
 	{
 		perror("fork");
 		free(full_path);
-		return(errno);
+		return (errno);
 	}
 	if (child_pid == 0)
 	{
@@ -33,7 +33,7 @@ int execute(char **tokens)
 		{
 			print_command_not_found_error(command, 127);
 			free(full_path);
-			return(errno);
+			return (errno);
 		}
 		else
 		{
