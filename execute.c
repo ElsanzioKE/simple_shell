@@ -20,8 +20,6 @@ int execute(char **tokens)
 
 	command = tokens[0];
 	full_path = find_path(command);
-	if (full_path == NULL)
-		print_command_not_found_error(command, 127);
 	child_pid = fork();
 	if (child_pid == -1)
 	{
@@ -32,7 +30,7 @@ int execute(char **tokens)
 	{
 		if (execve(full_path, tokens, environ) == -1)
 		{
-			perror("execve");
+			print_command_not_found_error(command, 127);
 			exit(EXIT_FAILURE);
 		}
 		else
